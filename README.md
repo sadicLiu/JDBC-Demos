@@ -37,9 +37,17 @@
     </dependency>
   ```
 
+>官方文档 https://github.com/brettwooldridge/HikariCP
+
 - CP_0100_JDBCConnection  
 JDBC连接MySQLdemo
 - CP_0200_HikariConfigTest  
 使用`HikariConfig`类获取`java.sql.Connection`对象
 - CP_0300_HikariDataSourceTest  
-使用`HikariDataSource`类获取`java.sql.Connection`对象
+使用`HikariDataSource`类获取`java.sql.Connection`对象  
+这个demo中演示了两个使用HikariDataSource实例设置相关参数的方法，有关更多参数的设置请参考[官方文档](https://github.com/brettwooldridge/HikariCP)
+- 关于参数调优的问题
+
+  >HikariCP has plenty of "knobs" to turn as you can see above, but comparatively less than some other pools. This is a design philosophy. The HikariCP design aesthetic is Minimalism. In keeping with the simple is better or less is more design philosophy, some configuration axis are intentionally left out.
+
+  上面是出自官方文档中的一段话，核心思想是“越简单越好”，HikariCP虽然有很多可以自己设置的参数，但是这些可以自定义的参数数量远远少于其他产品，而且这些参数大多数都是有设置好的默认值，也就是说，除非有特殊需求，你基本上不用自己去设置这些参数，用默认值就好
